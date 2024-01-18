@@ -20,7 +20,8 @@ body {
     width: 5rem;
 }
 
-.kinetic::after, .kinetic::before {
+.kinetic::after,
+.kinetic::before {
     content: '';
     position: absolute;
     top: 0;
@@ -29,11 +30,12 @@ body {
     width: 0;
     border: 4rem solid transparent;
     border-bottom-color: #fff;
-    animation: rotate 2s linear infinite;
+    animation: rotateA 2s linear infinite .5s;
 }
 
 .kinetic::before {
     transform: rotate(90deg);
+    animation: rotateB 2s linear infinite;
 }
 
 @keyframes rotateA {
@@ -45,5 +47,17 @@ body {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateB {
+    0%, 25% {
+        transform: rotate(90deg);
+    }
+    50%, 75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(450deg);
     }
 }
